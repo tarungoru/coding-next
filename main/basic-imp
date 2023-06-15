@@ -1,1 +1,9 @@
+'program to find even or odd'
 
+def iseven(n):
+    return n&1
+n=int(input())
+if iseven(n):
+    print('odd')
+else:
+    print('even')
