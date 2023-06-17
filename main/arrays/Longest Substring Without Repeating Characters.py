@@ -12,7 +12,7 @@ for i in range(len(s)):
   res.append(s[i])
   c+=1
   ct=max(ct,c)
-  print(ct)
+print(ct)
   
 # optimised solution using the set
 
