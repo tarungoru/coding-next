@@ -38,4 +38,16 @@ for r in range(len(arr)):
     l+=1
 return r-l+1
 
+# Efficient solution
+l=0
+zeros=0
+for r in arr:
+  if not r:
+    zeros+=1
+  if zeros>m:
+    if not arr[l]:
+      zeros-=1
+  l+=1
+return len(arr)-l
+
 
