@@ -25,4 +25,17 @@ for j in range(len(arr)):
   res=max(res,j-i+1)
 print(res)
 
+# using sliding window technique
+
+l=0
+zeros=0
+for r in range(len(arr)):
+  if arr[r]==0:
+    zeros+=1
+  if zeros>m:
+    if arr[l]==0:
+      zeros-=1
+    l+=1
+return r-l+1
+
 
