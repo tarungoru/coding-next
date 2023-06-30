@@ -15,3 +15,18 @@ for i in range(len(arr)):
     if sum==0:
       res=max(res,j-i+1)
 print(res)
+
+# optimized code using hash map
+
+hash={}
+res=0
+sum=0
+for i in range(len(nums)):
+  sum+=nums[i]
+  if sum==0:
+    res=max(res,i+1)
+  if sum in hash:
+    res=max(res,i-hash[sum])
+  else:
+    hash[sum]=i
+print(res)
