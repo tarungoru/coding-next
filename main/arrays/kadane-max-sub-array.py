@@ -25,3 +25,16 @@ for i in range(len(nums)):
   sum+=nums[i]
   res=max(res,sum)
 print(res)
+
+# simplified code
+
+res=-10**9
+curr_sum = 0
+max_temp_sum = float('-inf')
+for i in range(len(temp)*k):
+  curr_sum = max(temp[i%n], curr_sum +temp[i%n])
+	max_temp_sum = max(max_temp_sum, curr_sum)
+	res= max(res, max_temp_sum)
+print(res)
+
+
