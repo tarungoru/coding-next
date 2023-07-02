@@ -68,3 +68,29 @@ def mergesort(arr):
         k+=1
     return arr
 print(mergesort(arr))
+
+# quick sort algorithm
+
+
+def quickSortUsingDutchNationalFlag(arr):
+    def partion(arr,low,high):
+        piv=arr[high]
+        swap=low-1
+        for i in range(low,high):
+            if arr[i]<=piv:
+                swap+=1
+                arr[i],arr[swap]=arr[swap],arr[i]
+        arr[high],arr[swap+1]=arr[swap+1],arr[high]
+        return swap+1
+
+
+
+    def quicksort(arr,low,high):
+        if low<high:
+            index=partion(arr,low,high)
+            quicksort(arr,low,index-1)
+            quicksort(arr,index+1,high)
+    quicksort(arr,0,len(arr)-1)
+    return arr
+arr=[1,9,4,2,0]
+print(quickSortUsingDutchNationalFlag(arr))
