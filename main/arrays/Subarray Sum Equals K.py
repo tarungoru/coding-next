@@ -23,3 +23,34 @@ for i in range(len(nums)):
   res+=hash.get(sum-k,0)
   hash[sum]=1+hash.get(sum,0) 
 print(res)
+
+
+
+# Subarray with given sum
+# brute force finding indexes
+
+for i in range(len(arr)):
+  sum1=0
+  for j in range(i,len(arr)):
+    sum1+=arr[j]
+    if sum1==s:
+      return [i+1,j+1]
+return [-1]
+
+
+# optimised way
+
+if s==0:
+  return [-1]
+res=0
+l=0
+sum1=0
+for i in range(len(arr)):
+  sum1+=arr[i]
+  while sum1>s:
+    sum1-=arr[l]
+    l+=1
+  if sum1==s:
+    return [l+1,i+1]
+return [-1]
+
