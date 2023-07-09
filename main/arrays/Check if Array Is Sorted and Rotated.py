@@ -16,6 +16,6 @@ elif count==1:
   for i in range(len(arr)-1):
     if arr[i+1]<arr[i]:
       print(False)
-  print(False)
+  print(True)
 else:
   print(False)
